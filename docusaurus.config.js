@@ -10,12 +10,12 @@ import redirectsConfig from './docusaurus.redirects.config.js';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Rossum.ai University',
-  tagline: 'Build something cool with Rossum.ai',
+  title: 'Unofficial Rossum.ai University',
+  tagline: 'Build something cool with Rossum.ai and @mrtnzlml',
   favicon: 'img/128-blue-crunch.png',
 
   // Set the production url of your site here
-  url: 'https://rossum.university',
+  url: 'https://mrtnzlml.github.io/rossum.university/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/rossum.university/',
@@ -49,7 +49,7 @@ const config = {
         docs: {
           // Will be passed to @docusaurus/plugin-content-docs (false to disable)
           sidebarPath: './sidebars.js',
-          editUrl: 'https://github.com/rossumai/university/tree/master/',
+          editUrl: 'https://github.com/mrtnzlml/rossum.university/tree/master/',
         },
         blog: false,
         theme: {
@@ -69,7 +69,7 @@ const config = {
     ({
       image: 'img/og_image.png',
       navbar: {
-        title: 'Rossum.ai University',
+        title: 'Unofficial Rossum.ai University',
         logo: {
           alt: 'Rossum.ai Logo',
           src: 'img/128-blue-crunch.png',
@@ -155,14 +155,13 @@ const config = {
           //   ],
           // },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Rossum.ai`,
+        copyright: `By @mrtnzlml with ❤️`,
       },
-      // announcementBar: {
-      //   content:
-      //     '🚧 Work in progress. <strong>Leave <a href="https://github.com/rossumai/university/discussions" target="_blank">your feedback</a></strong>. 🚧',
-      //   backgroundColor: '#fff8e6',
-      //   isCloseable: false,
-      // },
+      announcementBar: {
+        content: 'This is an unofficial documentation of the Rossum.ai platform. Are you looking for <a href="https://knowledge-base.rossum.ai/">https://knowledge-base.rossum.ai/</a>?',
+        backgroundColor: '#e6a700',
+        isCloseable: false,
+      },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
