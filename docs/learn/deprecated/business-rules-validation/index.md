@@ -1,7 +1,7 @@
 ---
 title: 'Business Rules Validation'
 sidebar_position: 1
-slug: '/learn/business-rules-validations'
+slug: '/learn/business-rules-validation'
 ---
 
 import Deprecated from '../../\_deprecated.md';

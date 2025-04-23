@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: 'Business Rules Validation: Configuration examples'
 sidebar_label: 'Configuration examples'
-slug: '/learn/business-rules-validations/configuration-examples'
+slug: '/learn/business-rules-validation/configuration-examples'
 ---
 
 import Deprecated from '../../\_deprecated.md';
