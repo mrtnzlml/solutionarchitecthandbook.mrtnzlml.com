@@ -87,11 +87,6 @@ const config = {
             position: 'left',
             label: 'Courses',
           },
-          {
-            to: '/docs/watch',
-            label: 'Watch',
-            position: 'left',
-          },
 
           // See: http://localhost:3000/docs/docusaurus/intro
           // {
