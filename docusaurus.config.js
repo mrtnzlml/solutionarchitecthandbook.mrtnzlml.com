@@ -6,8 +6,6 @@
 
 import { themes as prismThemes } from 'prism-react-renderer';
 
-import redirectsConfig from './docusaurus.redirects.config.js';
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Unofficial Rossum.ai University',
@@ -39,7 +37,7 @@ const config = {
     locales: ['en'],
   },
 
-  plugins: [['@docusaurus/plugin-client-redirects', redirectsConfig]],
+  // plugins: [['@docusaurus/plugin-client-redirects', redirectsConfig]],
 
   presets: [
     [
