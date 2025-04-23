@@ -15,7 +15,7 @@ const config = {
   favicon: 'img/128-blue-crunch.png',
 
   // Set the production url of your site here
-  url: 'https://mrtnzlml.github.io/rossum.university/',
+  url: 'https://mrtnzlml.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/rossum.university/',
