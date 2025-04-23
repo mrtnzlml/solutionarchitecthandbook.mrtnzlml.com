@@ -3,7 +3,12 @@ sidebar_position: 2
 title: 'Business Rules Validation: Expression Engine'
 sidebar_label: 'Expression Engine'
 toc_max_heading_level: 4
+slug: '/learn/business-rules-validations/expression-engine'
 ---
+
+import Deprecated from '../../\_deprecated.md';
+
+<Deprecated />
 
 # Expression Engine
 
