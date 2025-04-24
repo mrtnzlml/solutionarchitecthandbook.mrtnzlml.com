@@ -153,6 +153,36 @@ Requires 'Lists -> Customers' permissions.
 }
 ```
 
+### Departments
+
+```json
+{
+  "master_data_name": "NS_SB1_Department_v1",
+  "payload": {
+    "method_args": [
+      {
+        "_ns_type": "DepartmentSearchBasic",
+        "isInactive": {
+          "searchValue": "false"
+        }
+      }
+    ],
+    "method_name": "search",
+    "method_headers": {
+      "searchPreferences": {
+        "pageSize": 100,
+        "bodyFieldsOnly": false,
+        "returnSearchColumns": false
+      }
+    }
+  },
+  "async_settings": {
+    "retries": 5,
+    "max_run_time_s": 36000
+  }
+}
+```
+
 ### Inventory items
 
 ```json
