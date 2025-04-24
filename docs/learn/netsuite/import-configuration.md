@@ -253,6 +253,33 @@ Requires 'Lists -> Customers' permissions.
 }
 ```
 
+### Nexus
+
+```json
+{
+  "master_data_name": "NS_SB1_Nexus_v1",
+  "payload": {
+    "method_args": [
+      {
+        "_ns_type": "NexusSearchBasic"
+      }
+    ],
+    "method_name": "search",
+    "method_headers": {
+      "searchPreferences": {
+        "pageSize": 100,
+        "bodyFieldsOnly": false,
+        "returnSearchColumns": false
+      }
+    }
+  },
+  "async_settings": {
+    "retries": 5,
+    "max_run_time_s": 36000
+  }
+}
+```
+
 ### Non-inventory items
 
 ```json
