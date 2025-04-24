@@ -614,6 +614,35 @@ Even though using JavaScript can be easier in some scenarios, it is typically le
 }
 ```
 
+## Prioritize preferred results
+
+The following query returns results as usual but sorts the preferred results above the rest:
+
+```json
+{
+  "aggregate": [
+    {
+      "$match": {
+        "active": true,
+        "country.code": "{country_code}"
+      }
+    },
+    {
+      "$addFields": {
+        "__is_preferred_result": {
+          "$eq": ["$internalId", "{preferred_result_id}"]
+        }
+      }
+    },
+    {
+      "$sort": {
+        "__is_preferred_result": -1
+      }
+    }
+  ]
+}
+```
+
 ## Remove duplicates (`$group`)
 
 ```json
