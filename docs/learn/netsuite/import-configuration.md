@@ -34,7 +34,7 @@ Recommended schedule: `0 22 * * *`
   "import_configs": [
     {
       // Currencies
-      "master_data_name": "NS_SB1_Currency_v1",
+      "master_data_name": "NS_Currency_v1",
       "async_settings": {
         "retries": 5,
         "max_run_time_s": 36000
@@ -67,7 +67,7 @@ Requires 'Lists -> Accounts' permissions.
 
 ```json
 {
-  "master_data_name": "NS_SB1_Account_v1",
+  "master_data_name": "NS_Account_v1",
   "async_settings": {
     "retries": 5,
     "max_run_time_s": 36000
@@ -100,7 +100,7 @@ Requires 'Lists -> Currency' permissions.
 
 ```json
 {
-  "master_data_name": "NS_SB1_Currency_v1",
+  "master_data_name": "NS_Currency_v1",
   "async_settings": {
     "retries": 5,
     "max_run_time_s": 36000
@@ -127,6 +127,7 @@ Requires 'Lists -> Customers' permissions.
 
 ```json
 {
+  "master_data_name": "NS_Customer_v1",
   "payload": {
     "method_args": [
       {
@@ -148,8 +149,7 @@ Requires 'Lists -> Customers' permissions.
   "async_settings": {
     "retries": 5,
     "max_run_time_s": 36000
-  },
-  "master_data_name": "NS_SB1_Customer_v1"
+  }
 }
 ```
 
@@ -157,7 +157,7 @@ Requires 'Lists -> Customers' permissions.
 
 ```json
 {
-  "master_data_name": "NS_SB1_Department_v1",
+  "master_data_name": "NS_Department_v1",
   "payload": {
     "method_args": [
       {
@@ -187,7 +187,7 @@ Requires 'Lists -> Customers' permissions.
 
 ```json
 {
-  "master_data_name": "NS_SB1_InventoryItem_v1",
+  "master_data_name": "NS_InventoryItem_v1",
   "async_settings": {
     "retries": 5,
     "max_run_time_s": 36000
@@ -225,7 +225,7 @@ Requires 'Lists -> Customers' permissions.
 
 ```json
 {
-  "master_data_name": "NS_SB1_ItemReceipt_v1",
+  "master_data_name": "NS_ItemReceipt_v1",
   "async_settings": {
     "retries": 5,
     "max_run_time_s": 36000
@@ -260,7 +260,7 @@ Requires 'Lists -> Customers' permissions.
 
 ```json
 {
-  "master_data_name": "NS_SB1_Location_v1",
+  "master_data_name": "NS_Location_v1",
   "async_settings": {
     "retries": 5,
     "max_run_time_s": 36000
@@ -283,11 +283,11 @@ Requires 'Lists -> Customers' permissions.
 }
 ```
 
-### Nexus
+### Nexuses
 
 ```json
 {
-  "master_data_name": "NS_SB1_Nexus_v1",
+  "master_data_name": "NS_Nexus_v1",
   "payload": {
     "method_args": [
       {
@@ -314,7 +314,7 @@ Requires 'Lists -> Customers' permissions.
 
 ```json
 {
-  "master_data_name": "NS_SB1_NonInventoryItem_v1",
+  "master_data_name": "NS_NonInventoryItem_v1",
   "async_settings": {
     "retries": 5,
     "max_run_time_s": 36000
@@ -358,7 +358,7 @@ Requires 'Transactions → Purchase Order (View)' permissions.
 
 ```json
 {
-  "master_data_name": "NS_SB1_PurchaseOrder_v1",
+  "master_data_name": "NS_PurchaseOrder_v1",
   "async_settings": {
     "retries": 5,
     "max_run_time_s": 36000
@@ -393,7 +393,7 @@ Requires 'Transactions → Purchase Order (View)' permissions.
 
 ```json
 {
-  "master_data_name": "NS_SB1_SalesTaxItem_v1",
+  "master_data_name": "NS_SalesTaxItem_v1",
   "async_settings": {
     "retries": 5,
     "max_run_time_s": 36000
@@ -426,7 +426,7 @@ Requires 'Lists -> Subsidiaries' permissions.
 
 ```json
 {
-  "master_data_name": "NS_SB1_Subsidiary_v1",
+  "master_data_name": "NS_Subsidiary_v1",
   "async_settings": {
     "retries": 5,
     "max_run_time_s": 36000
@@ -462,7 +462,7 @@ Requires 'Lists -> Vendors' permissions.
 
 ```json
 {
-  "master_data_name": "NS_SB1_Vendor_v1",
+  "master_data_name": "NS_Vendor_v1",
   "async_settings": {
     "retries": 5,
     "max_run_time_s": 36000
@@ -508,6 +508,7 @@ To solve it, try removing `method_headers.searchPreferences` from your request. 
 
 ```json
 {
+  "master_data_name": "NS_VendorSubsidiaryRelationship_v1",
   "payload": {
     "method_args": [
       {
@@ -519,8 +520,7 @@ To solve it, try removing `method_headers.searchPreferences` from your request. 
   "async_settings": {
     "retries": 5,
     "max_run_time_s": 36000
-  },
-  "master_data_name": "NS_SB1_VendorSubsidiaryRelationship_v1"
+  }
 }
 ```
 
@@ -528,7 +528,7 @@ To solve it, try removing `method_headers.searchPreferences` from your request. 
 
 ```json
 {
-  "master_data_name": "NS_SB1_VendorBill_v1",
+  "master_data_name": "NS_VendorBill_v1",
   "async_settings": {
     "retries": 5,
     "max_run_time_s": 36000
@@ -576,7 +576,7 @@ If you'd like to modify the async settings, you can do so using the following `a
   "run_async": true,
   "import_configs": [
     {
-      "master_data_name": "NS_SB1_PurchaseOrder_v1",
+      "master_data_name": "NS_PurchaseOrder_v1",
       // highlight-start
       "async_settings": {
         "retries": 2, // max: 10
@@ -637,7 +637,7 @@ Sometimes, it can be handy to import just one specific record:
       "async_settings": {
         "retries": 5
       },
-      "master_data_name": "NS_SB1_PurchaseOrder_v1"
+      "master_data_name": "NS_PurchaseOrder_v1"
     }
   ],
   "netsuite_settings": {
@@ -721,7 +721,7 @@ Advanced transaction search requires 'Transactions → Find Transaction' permiss
           }
         }
       },
-      "master_data_name": "NS_SB1_PurchaseOrder_v1",
+      "master_data_name": "NS_PurchaseOrder_v1",
       // highlight-start
       "advanced_search_internal_id_jmespath": "basic.internalId[0].searchValue.internalId"
       // highlight-end
@@ -814,7 +814,7 @@ We can leverage this default sorting and partition the initial imports to years 
           }
         }
       },
-      "master_data_name": "NS_SB1_PurchaseOrder_v1"
+      "master_data_name": "NS_PurchaseOrder_v1"
     },
     {
       // Download Purchase Orders for year 2023:
@@ -844,7 +844,7 @@ We can leverage this default sorting and partition the initial imports to years 
           }
         }
       },
-      "master_data_name": "NS_SB1_PurchaseOrder_v1"
+      "master_data_name": "NS_PurchaseOrder_v1"
     },
     {
       // Download Purchase Orders for the rest of the years:
@@ -873,7 +873,7 @@ We can leverage this default sorting and partition the initial imports to years 
           }
         }
       },
-      "master_data_name": "NS_SB1_PurchaseOrder_v1"
+      "master_data_name": "NS_PurchaseOrder_v1"
     }
   ]
 }
