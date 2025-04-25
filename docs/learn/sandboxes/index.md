@@ -35,12 +35,6 @@ prd2 update
 
 You can find more information here: https://github.com/rossumai/deployment-manager
 
-:::warning[Using Microsoft Windows?]
-
-Sandboxes are currently not supported on Windows. You can, however, use WSL to run the `prd2` command: https://learn.microsoft.com/en-us/windows/wsl/install
-
-:::
-
 Alternatively, you can install the tool manually (advanced):
 
 ```bash
@@ -54,6 +48,12 @@ python3 -m pip install pipx
 
 python3 -m pipx install . --force
 ```
+
+:::warning[Using Microsoft Windows?]
+
+Sandboxes are currently not supported on Windows. You can, however, use WSL to run the `prd2` command: https://learn.microsoft.com/en-us/windows/wsl/install
+
+:::
 
   </TabItem>
   <TabItem value="prd" label="v1 (deprecated)">
@@ -88,9 +88,47 @@ Sandboxes are currently not supported on Windows. You can, however, use WSL to r
 <Tabs groupId="prd">
   <TabItem value="prd2" label="v2 (latest)" default>
 
-<WIP />
+Complete list of commands and their parameters can be found when running `prd2 --help`:
 
-Complete list of commands and their parameters can be found when running `prd2 --help`.
+```text
+Usage: prd2 [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  --version  Show the version and exit.
+  --help     Show this message and exit.
+
+Commands:
+  deploy           Group of commands related to deploying from source to...
+  hook             Group of commands related to working with hooks
+  init             Creates a new project directory with the specified...
+  migrate-mapping  Updates the current mapping.yaml to conform with the...
+  pull             Downloads all Rossum objects from the user's default...
+  purge            Deletes all objects in Rossum based on IDs in the...
+  push             Updates local files that were changed into Rossum.
+  update           Updates the PRD command to the latest version.
+```
+
+For more information about each command, run `prd2 <command> --help` (example for pull command):
+
+```text
+Usage: prd2 pull [OPTIONS] [DESTINATIONS]...
+
+  Downloads all Rossum objects from the user's default (first) organization.
+  Creates a local organization directory structure with the configs of these
+  objects. In case the directory already exists, it first deletes its contents
+  and then downloads them anew.
+
+Options:
+  -c, --commit                    Commits the pulled changes automatically.
+  -a, --all                       Downloads all remote files and overwrites
+                                  the local ones in the selected destinations.
+  -s, --skip-objects-without-subdir
+                                  If there are objects whose subdir cannot be
+                                  determined, user is not manually prompted -
+                                  objects are not downloaded.
+  -m, --message TEXT              Commit message for pulling.
+  --help                          Show this message and exit.
+```
 
   </TabItem>
   <TabItem value="prd" label="v1 (deprecated)">
