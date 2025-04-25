@@ -2,6 +2,7 @@
 title: 'NetSuite: Import configuration'
 sidebar_position: 2
 sidebar_label: 'Import configuration'
+toc_max_heading_level: 4
 ---
 
 import Tabs from '@theme/Tabs';
@@ -183,7 +184,9 @@ Requires 'Lists -> Customers' permissions.
 }
 ```
 
-### Inventory items
+### Items
+
+#### Inventory items
 
 ```json
 {
@@ -210,6 +213,82 @@ Requires 'Lists -> Customers' permissions.
         }
       }
     ],
+    "method_headers": {
+      "searchPreferences": {
+        "pageSize": 100,
+        "bodyFieldsOnly": false,
+        "returnSearchColumns": false
+      }
+    }
+  }
+}
+```
+
+#### Non-inventory items
+
+```json
+{
+  "master_data_name": "NS_NonInventoryItem_v1",
+  "async_settings": {
+    "retries": 5,
+    "max_run_time_s": 36000
+  },
+  "payload": {
+    "method_name": "search",
+    "method_args": [
+      {
+        "_ns_type": "ItemSearchBasic",
+        "type": {
+          "searchValue": "_nonInventoryItem",
+          "operator": "anyOf"
+        },
+        "isInactive": {
+          "searchValue": false
+        },
+        "lastModifiedDate": {
+          "operator": "onOrAfter",
+          "searchValue": "{last_modified_date}"
+        }
+      }
+    ],
+    "method_headers": {
+      "searchPreferences": {
+        "pageSize": 100,
+        "bodyFieldsOnly": false,
+        "returnSearchColumns": false
+      }
+    }
+  }
+}
+```
+
+#### All items (inventory and non-inventory)
+
+```json
+{
+  "master_data_name": "NS_Inventory_NonInventoryItem_v1",
+  "async_settings": {
+    "retries": 5,
+    "max_run_time_s": 36000
+  },
+  "payload": {
+    "method_args": [
+      {
+        "type": {
+          "operator": "anyOf",
+          "searchValue": ["_inventoryItem", "_nonInventoryItem"]
+        },
+        "_ns_type": "ItemSearchBasic",
+        "isInactive": {
+          "searchValue": false
+        },
+        "lastModifiedDate": {
+          "operator": "onOrAfter",
+          "searchValue": "{last_modified_date}"
+        }
+      }
+    ],
+    "method_name": "search",
     "method_headers": {
       "searchPreferences": {
         "pageSize": 100,
@@ -306,44 +385,6 @@ Requires 'Lists -> Customers' permissions.
   "async_settings": {
     "retries": 5,
     "max_run_time_s": 36000
-  }
-}
-```
-
-### Non-inventory items
-
-```json
-{
-  "master_data_name": "NS_NonInventoryItem_v1",
-  "async_settings": {
-    "retries": 5,
-    "max_run_time_s": 36000
-  },
-  "payload": {
-    "method_name": "search",
-    "method_args": [
-      {
-        "_ns_type": "ItemSearchBasic",
-        "type": {
-          "searchValue": "_nonInventoryItem",
-          "operator": "anyOf"
-        },
-        "isInactive": {
-          "searchValue": false
-        },
-        "lastModifiedDate": {
-          "operator": "onOrAfter",
-          "searchValue": "{last_modified_date}"
-        }
-      }
-    ],
-    "method_headers": {
-      "searchPreferences": {
-        "pageSize": 100,
-        "bodyFieldsOnly": false,
-        "returnSearchColumns": false
-      }
-    }
   }
 }
 ```
