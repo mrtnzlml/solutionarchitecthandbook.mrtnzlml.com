@@ -19,6 +19,7 @@ import WIP from '../\_wip.md';
 
 ```json
 {
+  "debug": false,
   "configurations": [
     {
       "logic": [
