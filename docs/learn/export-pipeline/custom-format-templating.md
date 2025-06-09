@@ -5,7 +5,6 @@ sidebar_position: 2
 ---
 
 import WebhookEndpoints from '../\_webhook_endpoints.md';
-import WIP from '../\_wip.md';
 
 # Custom format templating
 
@@ -33,10 +32,6 @@ import WIP from '../\_wip.md';
   us="https://us.custom-format-templating.rossum-ext.app/"
   jp="https://shared-jp.custom-format-templating.rossum-ext.app/"
 />
-
-## Basic usage
-
-<WIP issue="https://github.com/rossumai/university/issues/382" />
 
 ## Available configuration options
 
@@ -74,6 +69,12 @@ It is also possible to access the annotation payload like so: `{{payload['docume
 :::warning
 
 Maximum five export configs can be defined per annotation export.
+
+:::
+
+:::warning
+
+It is important to **sanitize fields** used in the template (remove new lines, special characters, etc. so that these special characters conform to the expected format specification). It is not possible to control the whole document format so the sanitization must be performed on a field-by-field basis.
 
 :::
 
