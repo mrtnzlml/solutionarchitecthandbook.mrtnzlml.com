@@ -689,7 +689,9 @@ Sometimes, it can be handy to import just one specific record:
 
 ## Using advanced transaction search
 
-Using `TransactionSearchAdvanced` can be beneficial if we want to select which fields should be fetched from NetSuite (to lower the payload size as well as data storage requirements). Additionally, it can be useful to fetch additional columns such as `createdFromJoin` or `applyingTransactionJoin` and similar.
+Advanced search can be beneficial if we want to select which fields should be fetched from NetSuite (to lower the payload size as well as data storage requirements). Additionally, it can be useful to fetch additional columns such as `createdFromJoin` or `applyingTransactionJoin` and similar.
+
+### `TransactionSearchAdvanced`
 
 :::info
 
@@ -771,6 +773,79 @@ Advanced transaction search requires 'Transactions → Find Transaction' permiss
   "netsuite_settings": {
     // …
   }
+}
+```
+
+### `CustomRecordSearchAdvanced`
+
+```json
+{
+  "payload": {
+    "method_args": [
+      {
+        "columns": {
+          "basic": {
+            "created": {},
+            "recType": {},
+            "externalId": {},
+            "internalId": {},
+            "isInactive": {},
+            "lastModified": {},
+            "customFieldList": {
+              "_ns_type": "SearchColumnCustomFieldList",
+              "customField": [
+                {
+                  "_ns_type": "SearchColumnStringCustomField",
+                  "scriptId": "custrecord_2663_entity_bic"
+                },
+                {
+                  "_ns_type": "SearchColumnStringCustomField",
+                  "scriptId": "custrecord_2663_entity_iban"
+                },
+                {
+                  "_ns_type": "SearchColumnStringCustomField",
+                  "scriptId": "custrecord_2663_entity_branch_no"
+                },
+                {
+                  "_ns_type": "SearchColumnStringCustomField",
+                  "scriptId": "custrecord_2663_entity_acct_no"
+                },
+                {
+                  "_ns_type": "SearchColumnStringCustomField",
+                  "scriptId": "custrecord_2663_entity_acct_suffix"
+                }
+              ]
+            }
+          },
+          "_ns_type": "CustomRecordSearchRow"
+        },
+        "_ns_type": "CustomRecordSearchAdvanced",
+        "criteria": {
+          "basic": {
+            "recType": {
+              "internalId": 854
+            },
+            "lastModified": {
+              "operator": "onOrAfter",
+              "searchValue": "{last_modified_date}"
+            },
+            "_ns_type": "CustomRecordSearchBasic"
+          },
+          "_ns_type": "CustomRecordSearch"
+        }
+      }
+    ],
+    "method_name": "search",
+    "method_headers": {
+      "searchPreferences": {
+        "pageSize": 100,
+        "bodyFieldsOnly": false,
+        "returnSearchColumns": true
+      }
+    }
+  },
+  "master_data_name": "NS_BankDetail_v1",
+  "advanced_search_internal_id_jmespath": "basic.internalId[0].searchValue.internalId"
 }
 ```
 
