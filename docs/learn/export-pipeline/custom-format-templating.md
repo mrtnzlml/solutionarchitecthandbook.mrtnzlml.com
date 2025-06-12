@@ -313,3 +313,56 @@ Result is a generated TXT file representing a tree with crown height of 5 rows:
 *********
     |
 ```
+
+### Custom EDIFACT
+
+```json
+{
+  "export_configs": [
+    {
+      "content_encoding": "utf-8-sig",
+      "export_reference_key": "export_edifact",
+      "file_content_template_multiline": [
+        "{% set ns = namespace(counter=33) %}",
+        "UNA:+.?*'",
+        "UNB+UNOB:4::+123456789+123456789+{{field.unique_id}}'",
+        "UNH+{{field.unique_id}}+INVOIC:D:10A:UN+++++SCAN'",
+        "BGM+{{document_type}}+{{invoice_number}}+43'",
+        "DTM+137:{{field.invoice_date}}+:102'",
+        "DTM+243:{{scan_date}}:102'",
+        "FTX+INV+3++40{{field.hand_written_segment}}+de'",
+        "RFF+AFF:{{field.unique_id}}'",
+        "RFF+AWK:Acknowledgement_{{field.unique_id}}.pdf'",
+        "RFF+AJK:{{field.invoice_type_id}}X'",
+        "RFF+ANJ:AuthNum_Test'",
+        "RFF+ON:{{field.order_number}}'",
+        "RFF+IP:{{import_number}}'",
+        "NAD+SU+::92++{{field.sender_name}}+{{field.sender_street}}+{{field.sender_city}}++{{field.sender_zip}}+{{field.sender_country}}'",
+        "FII+SU+bankaccount:account holder+Default Swift:25:5:Defaultbankkey:25:131+GB'",
+        "RFF+PQ:qrcodeTest'",
+        "RFF+AHP:{{field.sender_vat_id}}'",
+        "CTA+AP+person:department'",
+        "COM+066666666:TE'",
+        "NAD+UC+::92++Dummy +Dummy +Dummy ++12345+IN'",
+        "NAD+BY+{{field.buyer_org_id}}::234++{{field.recipient_name}}+{{field.recipient_street}}+{{field.recipient_city}}++{{field.recipient_zip}}+{{field.recipient_country}}'",
+        "NAD+MS+A1730832::234++Example +Example +Example ++91052+DE'",
+        "CUX+2:{{field.currency}}:4:1+6:{{field.api_currency}}:18:1+{{field.exchange_rate}}+ECR'",
+        "DTM+134:{{field.scan_date}}:102'",
+        "LIN+1++500123456789:BP'",
+        "QTY+47:1.000:PCE'",
+        "MOA+66:{{field.amount_due}}'",
+        "MOA+203:{{field.amount_due}}'",
+        "PRI+INV:{{field.amount_due}}:::1.000:PCE'",
+        "UNS+S'",
+        "MOA+39:{{field.amount_due}}'",
+        "MOA+340:{{field.amount_total_base}}'",
+        "{% for item in field.tax_details %}TAX+7+VAT:::C1+AR++:::{{item.tax_detail_rate}}'\nMOA+125:{{item.tax_detail_total}}'\nMOA+124:{{field.amount_total_base}}'{% set ns.counter = ns.counter + 1 %}{% if not loop.last %}\n{% endif %}{% endfor %}",
+        "ALC+C+:+++SC:::'",
+        "MOA+8:0.00'",
+        "UNT+{{ns.counter}}+0'",
+        "UNZ+1+00000000000001'"
+      ]
+    }
+  ]
+}
+```
