@@ -88,6 +88,7 @@ NetSuite main navigation can sometimes be very confusing as it is very customiza
 - Departments: [`/app/common/otherlists/departmentlist.nl?searchtype=Department`](https://system.netsuite.com/app/common/otherlists/departmentlist.nl?searchtype=Department)
 - File Cabinet [`/app/common/media/mediaitemfolders.nl`](https://system.netsuite.com/app/common/media/mediaitemfolders.nl)
 - Items: [`/app/common/item/itemlist.nl`](https://system.netsuite.com/app/common/item/itemlist.nl)
+- Nexuses: [`/app/setup/nexuses.nl`](https://system.netsuite.com/app/setup/nexuses.nl)
 - Purchase Orders: [`/app/accounting/transactions/transactionlist.nl?Transaction_TYPE=PurchOrd`](https://system.netsuite.com/app/accounting/transactions/transactionlist.nl?Transaction_TYPE=PurchOrd)
 - Roles: [`/app/setup/rolelist.nl`](https://system.netsuite.com/app/setup/rolelist.nl)
 - Subsidiaries: [`/app/common/otherlists/subsidiarylist.nl`](https://system.netsuite.com/app/common/otherlists/subsidiarylist.nl)
