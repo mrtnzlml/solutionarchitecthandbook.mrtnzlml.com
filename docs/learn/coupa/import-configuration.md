@@ -236,6 +236,29 @@ See [Currencies API (/currencies)](<https://compass.coupa.com/en-us/products/pro
 }
 ```
 
+### Exchange rates
+
+```json
+{
+  "credentials": {
+    "client_id": "…",
+    "base_api_url": "…",
+    "client_scope": "core.common.read"
+  },
+  "import_config": {
+    "query": {
+      "order_by": "created_at",
+      "updated-at[gt_or_eq]": "${last_modified_date}"
+    },
+    "method": "update",
+    "id_keys": ["id"],
+    "endpoint": "api/exchange_rates",
+    "dataset_name": "COUPA_DEV_exchange_rates_v1",
+    "records_per_request": 50
+  }
+}
+```
+
 ### Invoices
 
 See: [Invoices API (/invoices)](<https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api/resources/transactional-resources/invoices-api-(invoices)>)
