@@ -9,7 +9,19 @@ import RossumInternalOnly from '../\_rossum_internal_only.md';
 
 ## Installation
 
-File storage (SFTP and S3) import/export extension is provided and maintained by Rossum.ai in the form of webhook. To start using it, follow these steps:
+File storage (SFTP and S3) import/export extensions are available in the Rossum store. To install them:
+
+1. Login to your Rossum account.
+1. Navigate to **Extensions → Rossum Store**.
+1. Search one of the following extensions and "Add" them:
+   1. **Import Master Data From SFTP**
+   1. **Import Master Data from S3**
+   1. **Import Documents From SFTP**
+   1. **Import Documents From S3**
+   1. **Export To SFTP**
+   1. **Export To S3**
+
+Alternatively, it is also possible to install them manually (advanced):
 
 1. Login to your Rossum account.
 1. Navigate to **Extensions → My extensions**.
