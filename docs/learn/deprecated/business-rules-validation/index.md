@@ -74,7 +74,10 @@ Head over to [Configuration examples](./configuration-examples.md) page for coll
 
       // The condition that has to be met in order for validation to be applied (optional).
       // Do not confuse with the rule. This option only controls whether the rule is applied or not.
-      "condition": "has_value({document_id})"
+      "condition": "has_value({document_id})",
+
+      // An option to automatically converts data types during processing (enabled by default).
+      "autocast_types": "true"
     }
   ]
 }
