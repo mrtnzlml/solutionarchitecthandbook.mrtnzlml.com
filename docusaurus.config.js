@@ -156,7 +156,7 @@ const config = {
         copyright: `By @mrtnzlml with ❤️`,
       },
       announcementBar: {
-        content: 'This is an unofficial documentation of the Rossum.ai platform. Are you looking for <a href="https://knowledge-base.rossum.ai/">https://knowledge-base.rossum.ai/</a>?',
+        content: 'Looking for an official documentation of the Rossum.ai platform? Try this: <a href="https://knowledge-base.rossum.ai/">https://knowledge-base.rossum.ai/</a>',
         backgroundColor: '#e6a700',
         isCloseable: false,
       },
