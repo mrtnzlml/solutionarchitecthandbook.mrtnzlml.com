@@ -8,7 +8,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Unofficial Rossum.ai University',
+  title: 'The Solution Architect\'s Handbook',
   tagline: 'Build something cool with Rossum.ai and @mrtnzlml',
   favicon: 'img/128-blue-crunch.png',
 
@@ -16,12 +16,12 @@ const config = {
   url: 'https://mrtnzlml.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/rossum.university/',
+  baseUrl: '/rossum-sa-handbook/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'mrtnzlml', // Usually your GitHub org/user name.
-  projectName: 'rossum.university', // Usually your repo name.
+  projectName: 'rossum-sa-handbook', // Usually your repo name.
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
@@ -47,7 +47,7 @@ const config = {
         docs: {
           // Will be passed to @docusaurus/plugin-content-docs (false to disable)
           sidebarPath: './sidebars.js',
-          editUrl: 'https://github.com/mrtnzlml/rossum.university/tree/master/',
+          editUrl: 'https://github.com/mrtnzlml/rossum-sa-handbook/tree/master/',
         },
         blog: false,
         theme: {
@@ -67,7 +67,7 @@ const config = {
     ({
       image: 'img/og_image.png',
       navbar: {
-        title: 'Unofficial Rossum.ai University',
+        title: 'The Solution Architect\'s Handbook',
         logo: {
           alt: 'Rossum.ai Logo',
           src: 'img/128-blue-crunch.png',
