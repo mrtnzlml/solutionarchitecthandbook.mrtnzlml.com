@@ -3,6 +3,8 @@ title: 'AI training best practices'
 sidebar_position: 1
 ---
 
+import QuizComponent from '@site/src/components/QuizComponent';
+
 Rossum's AI-powered document processing doesn't need complex templates to be built for each vendor layout to be able to predict where the values should be.
 
 What the AI needs is precise and consistent data which we can get from User feedback - annotations.
@@ -36,7 +38,6 @@ When you first start using our product, it may not be clear what triggers AI lea
 ### Consistency
 
 1. If you have multiple values in a document, it is recommended to always select them from the same position. This is especially important when working with similar or identical layouts. Sometimes, it may be difficult to remember how you annotated a similar document. In such cases, you may want to consult previously confirmed documents or use the following rules to help maintain consistency.
-
    - Prefer values that appear earlier in the document.
    - If multiple values can fit, choose the one that is closer to the header part of the document.
    - If multiple values fit but are scattered across multiple pages, choose the one that is closest to the first page (or on the first page if possible).
@@ -44,7 +45,6 @@ When you first start using our product, it may not be clear what triggers AI lea
      In case multiple values are on the same level (on the right and left of the bottom of the document) just decide to go always closer to the right side of the document.
 
 2. Capture all and only the values in the documents.
-
    - If there is data in the document that has a corresponding field in the schema for extraction, capture it in each document where it is present, even if you may not need it to be extracted for a particular vendor or in a particular case.
    - Amounts should also always be captured, even if the value on the document is "0".
    - Conversely, if a value is not present on the invoice, please do not enter it manually.
@@ -54,17 +54,14 @@ For in detail explanation please reach out to [Annotations Guide](https://rossum
 ## 🛟 Common issues {#common-issues}
 
 1. The AI has predicted the correct value, but the reading of the text is incorrect
-
    - Re-adjust the Bounding Box so that the OCR is applied again
    - If, after a couple of attempts the value is not corrected, change the value manually
 
 2. The AI has predicted the correct value, but only partially or included extra text
-
    - Correct the position of the Bounding Box so that it goes around the correct data
    - The learning is then stored & will be applied to later annotations
 
 3. The date format is read incorrectly
-
    - The date format is pre-defined by the schema
    - The interpretation of ambiguous dates relies the document region that is set for the queue
    - Re-adjust the bounding box or ask your Admin to adjust the field to the correct date format, if the formatting is consistently not correct
@@ -82,6 +79,20 @@ It may happen that some of the recommendations contradict each other in particul
 - The principles of Precision and Accuracy should take priority.
 - When applying the Consistency principle, be reasonable. For example, if there is a logo at the top of the first page and a written sender name in the footer of the document, choose the footer, even if the recommendation is to prefer the header.
 - Another example is when two values always appear together in the footer, but one of them is also present in the header section (e.g., Sender Name and Sender Address). In this case, you can choose to annotate both together in the footer, but be consistent and do not occasionally switch to another location. In the end, consistency itself is more important
+
+<QuizComponent
+question="Can bounding boxes overlap?"
+answers={[
+{ text: 'Yes, they can' },
+{ text: 'Yes, as long as the values are identical' },
+{ text: 'No, they cannot', isCorrect: true }
+]}>
+Bounding boxes in Rossum.ai cannot overlap because each box is designed to capture a single, distinct data field from a document. This one-to-one relationship between a bounding box and a data field is fundamental to how the platform processes information accurately.
+
+The primary reason for prohibiting overlapping boxes is to avoid **ambiguity**. Rossum's AI links the text contained within a bounding box to a specific field in the document's schema (e.g., "Invoice Number," "Total Amount," "Order Date").
+
+If two boxes were to overlap, the AI wouldn't be able to determine which piece of data belongs to which field. For instance, if the boxes for "Invoice Number" and "Order Number" overlapped on the same string of text, the system would be confused about how to label that data correctly. This strict rule ensures that every captured value is unambiguously assigned to its intended field.
+</QuizComponent>
 
 ## 🙋 Q&A {#qa}
 
