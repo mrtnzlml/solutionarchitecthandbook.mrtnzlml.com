@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkuniversity=self.webpackChunkuniversity||[]).push([[2482],{5198:s=>{s.exports=JSON.parse('{"tags":[{"label":"master-data-hub","permalink":"/rossum-sa-handbook/cookbook/tags/master-data-hub","count":1},{"label":"rossum-formulas","permalink":"/rossum-sa-handbook/cookbook/tags/rossum-formulas","count":1}]}')}}]);
