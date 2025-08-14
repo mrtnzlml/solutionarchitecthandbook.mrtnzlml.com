@@ -49,7 +49,15 @@ const config = {
           sidebarPath: './sidebars.js',
           editUrl: 'https://github.com/mrtnzlml/rossum-sa-handbook/tree/master/',
         },
-        blog: false,
+        blog: {
+          // Will be passed to @docusaurus/plugin-content-blog (false to disable)
+          path: 'cookbook',
+          routeBasePath: 'cookbook',
+          blogTitle: 'Cookbook',
+          blogDescription: 'Cookbook',
+          blogSidebarCount: 0,
+          showReadingTime: false,
+        },
         theme: {
           // Will be passed to @docusaurus/theme-classic.
           customCss: './src/css/custom.css',
@@ -95,11 +103,11 @@ const config = {
           // },
 
           // http://localhost:3000/blog
-          // {
-          //   to: '/blog',
-          //   label: 'Blog',
-          //   position: 'left',
-          // },
+          {
+            to: '/cookbook',
+            label: 'Cookbook',
+            position: 'left',
+          },
 
           {
             href: 'https://elis.rossum.ai/api/docs/',
