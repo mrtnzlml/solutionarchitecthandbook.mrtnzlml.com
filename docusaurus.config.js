@@ -87,12 +87,6 @@ const config = {
             position: 'left',
             label: 'Learn',
           },
-          {
-            type: 'docSidebar',
-            sidebarId: 'coursesSidebar',
-            position: 'left',
-            label: 'Courses',
-          },
 
           // See: http://localhost:3000/docs/docusaurus/intro
           // {

@@ -19,6 +19,9 @@ function HomepageHeader() {
           <Link className="button button--secondary button--lg" to="/docs/learn/ai-learning">
             Learn
           </Link>
+          <Link className="button button--secondary button--lg" to="/cookbook">
+            Cookbook
+          </Link>
         </div>
       </div>
     </header>
