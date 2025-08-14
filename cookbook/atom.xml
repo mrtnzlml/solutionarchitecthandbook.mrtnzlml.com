@@ -32,10 +32,6 @@
             <name>Martin Zlámal</name>
             <uri>https://github.com/mrtnzlml</uri>
         </author>
-        <author>
-            <name>Václav Růt</name>
-            <uri>https://github.com/VaclavRut</uri>
-        </author>
         <category label="master-data-hub" term="master-data-hub"/>
         <category label="rossum-formulas" term="rossum-formulas"/>
     </entry>
