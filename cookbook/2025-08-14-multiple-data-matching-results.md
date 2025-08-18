@@ -76,5 +76,5 @@ answers={[
 { text: 'Yes, MDH can return values into any preconfigured field' },
 { text: 'No, only enum fields are supported', isCorrect: true }
 ]}>
-The only field type that Master Data Hub (MDH) extension supports are `enum` fields. Enum fields limit the section to only one specific value. However, we can still access all the values (options) using the `x.field.order_id_match.attr.options` code which can later be distributed into a multivalue table. 
+The only field type that Master Data Hub (MDH) extension supports are `enum` fields. Enum fields limit the section to only one specific value. However, we can still access all the values (options) using the `x.field.order_id_match.attr.options` code which can later be distributed into a multivalue table.
 </QuizComponent>
