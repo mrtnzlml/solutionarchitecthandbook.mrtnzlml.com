@@ -9,6 +9,7 @@ title: 'Line items grouping: Alternative Python solution'
 Consider using the following simple Python code (as a [serverless function](../rossum-formulas/serverless-functions.md)) that replaces the whole functionality of this extension (no need for any webhook):
 
 ```py
+from collections import defaultdict
 from rossum_python import RossumPython, is_empty, default_to, is_set
 
 
@@ -24,31 +25,30 @@ def rossum_hook_request_handler(payload):
     # Reset the target table:
     x.field.tax_details_export = []
 
-    vat_rate_groups = {}
+    vat_rate_groups = defaultdict(lambda: {
+        'tax_detail_base_export': [],
+        'tax_detail_tax_export': [],
+        'tax_detail_total_export': [],
+        'tax_detail_description_export': None
+    })
 
     for row in x.field.tax_details:
-        vat_rate = row.tax_detail_rate_normalized.attr.value
+        group = vat_rate_groups[row.tax_detail_rate_normalized.attr.value]
+        group['tax_detail_base_export'].append(row.tax_detail_base_normalized)
+        group['tax_detail_tax_export'].append(row.tax_detail_tax_normalized)
+        group['tax_detail_total_export'].append(row.tax_detail_total_normalized)
+        group['tax_detail_description_export'] = row.tax_detail_description
 
-        if vat_rate not in vat_rate_groups:
-            vat_rate_groups[vat_rate] = {
-                'tax_detail_base_export': [],
-                'tax_detail_tax_export': [],
-                'tax_detail_total_export': [],
-                'tax_detail_description_export': row.tax_detail_description
-            }
-
-        vat_rate_groups[vat_rate]['tax_detail_base_export'].append(row.tax_detail_base_normalized)
-        vat_rate_groups[vat_rate]['tax_detail_tax_export'].append(row.tax_detail_tax_normalized)
-        vat_rate_groups[vat_rate]['tax_detail_total_export'].append(row.tax_detail_total_normalized)
-
-    for rate, values in vat_rate_groups.items():
-        x.field.tax_details_export.append({
+    x.field.tax_details_export = [
+        {
             'tax_detail_rate_export': rate,
             'tax_detail_base_export': sum_values(values['tax_detail_base_export']),
             'tax_detail_tax_export': sum_values(values['tax_detail_tax_export']),
             'tax_detail_total_export': sum_values(values['tax_detail_total_export']),
             'tax_detail_description_export': values['tax_detail_description_export'],
-        })
+        }
+        for rate, values in vat_rate_groups.items()
+    ]
 
     return x.hook_response()
 ```
