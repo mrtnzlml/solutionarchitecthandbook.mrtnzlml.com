@@ -37,10 +37,10 @@ Alternatively, it is also possible to install them manually (advanced):
 ### Dataset import endpoints
 
 <WebhookEndpoints
-  eu1="https://elis.rossum.ai/svc/scheduled-imports/api/file_storage/v1/dataset_import"
-  eu2="https://shared-eu2.rossum.app/svc/scheduled-imports/api/file_storage/v1/dataset_import"
-  us="https://shared-us2.rossum.app/svc/scheduled-imports/api/file_storage/v1/dataset_import"
-  jp="https://shared-jp.rossum.app/svc/scheduled-imports/api/file_storage/v1/dataset_import"
+  eu1="https://elis.task-manager.rossum-ext.app/api/v1/tasks/file-storage-dataset-import"
+  eu2="https://shared-eu2.task-manager.rossum-ext.app/api/v1/tasks/file-storage-dataset-import"
+  us="https://shared-us2.task-manager.rossum-ext.app/api/v1/tasks/file-storage-dataset-import"
+  jp="https://shared-jp.task-manager.rossum-ext.app/api/v1/tasks/file-storage-dataset-import"
 />
 
 <RossumInternalOnly url="https://rossumai.atlassian.net/l/cp/PV1jzmqK" />
@@ -48,10 +48,10 @@ Alternatively, it is also possible to install them manually (advanced):
 ### Document import endpoints
 
 <WebhookEndpoints
-  eu1="https://elis.rossum.ai/svc/scheduled-imports/api/file_storage/v1/document_import"
-  eu2="https://shared-eu2.rossum.app/svc/scheduled-imports/api/file_storage/v1/document_import"
-  us="https://shared-us2.rossum.app/svc/scheduled-imports/api/file_storage/v1/document_import"
-  jp="https://shared-jp.rossum.app/svc/scheduled-imports/api/file_storage/v1/document_import"
+  eu1="https://elis.task-manager.rossum-ext.app/api/v1/tasks/file-storage-document-import"
+  eu2="https://shared-eu2.task-manager.rossum-ext.app/api/v1/tasks/file-storage-document-import"
+  us="https://shared-us2.task-manager.rossum-ext.app/api/v1/tasks/file-storage-document-import"
+  jp="https://shared-jp.task-manager.rossum-ext.app/api/v1/tasks/file-storage-document-import"
 />
 
 <RossumInternalOnly url="https://rossumai.atlassian.net/l/cp/PV1jzmqK" />
