@@ -44,5 +44,5 @@ This command generates static content into the `build` directory and can be serv
 Very handy for Gemini gems:
 
 ```bash
-find ./docs -name "*.md" | xargs cat > ./all_handbook_content.txt
+find ./docs ./cookbook -name "*.md" | xargs cat > ./all_handbook_content.txt
 ```
