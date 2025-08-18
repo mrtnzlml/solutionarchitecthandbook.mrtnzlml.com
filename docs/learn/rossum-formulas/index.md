@@ -3,6 +3,9 @@ title: 'Rossum Formulas'
 sidebar_position: 1
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 This section covers both the Rossum **Formula Fields** and the **Serverless Functions** (Formula Fields flavor in custom extensions).
 
 ## Installation
@@ -76,48 +79,20 @@ def rossum_hook_request_handler(payload):
 
 Formula field examples do not require any further modification.
 
-### Get datapoint value
+### Working with datapoints
 
-#### Formula field
+<Tabs groupId="rossum-formulas-flavor">
+  <TabItem value="formula_field" label="Formula field" default>
 
-Can be either returned directly from the formula fields or stored in some temporary variable.
-
-```py
-field.amount
-```
-
-#### Serverless function
-
-In case of serverless function, the value can never be returned directly and must be either used in some other function call, or stored in some temporary variable to be used later:
+Getting values (or meta information):
 
 ```py
-tmp = t.field.amount
+field.amount                            # Get datapoint value
+field.amount.id                         # Get datapoint system ID
+field.amount.attr.rir_confidence        # Get confidence score
+field.amount.attr.ocr_raw_text          # Get raw value extracted by OCR, if applicable
+field.amount.attr.rir_raw_text          # Get raw extracted text by RIR
 ```
-
-### Get datapoint metadata
-
-#### Formula field
-
-```py
-field.amount.id                         # Datapoint system ID
-field.amount.attr.rir_confidence        # Confidence score
-field.amount.attr.ocr_raw_text          # Raw value extracted by OCR, if applicable
-field.amount.attr.rir_raw_text          # Raw extracted text by RIR
-```
-
-#### Serverless function
-
-```py
-t.field.amount.id
-t.field.amount.rir_confidence
-
-t.field.amount.attr.ocr_raw_text
-t.field.amount.attr.rir_raw_text
-```
-
-### Write into datapoint value
-
-#### Formula field
 
 :::warning
 
@@ -125,43 +100,91 @@ Formula fields cannot write into any other fields. They simply return the value 
 
 :::
 
-#### Serverless function
+  </TabItem>
+  <TabItem value="serverless_function" label="Serverless function">
+
+Getting values (or meta information):
+
+```py
+t.field.amount                          # Get datapoint value
+t.field.amount.id                       # Get datapoint system ID
+t.field.amount.rir_confidence           # Get confidence score
+t.field.amount.attr.ocr_raw_text        # Get raw value extracted by OCR, if applicable
+t.field.amount.attr.rir_raw_text        # Get raw extracted text by RIR
+```
+
+Writing values:
 
 ```py
 t.field.amount = 10
 ```
 
-### Check whether datapoint is set or not
+  </TabItem>
+</Tabs>
 
-#### Formula field
+### Working with annotation data
+
+<Tabs groupId="rossum-formulas-flavor">
+  <TabItem value="formula_field" label="Formula field" default>
 
 ```py
-is_set(field.amount)     # Returns `true` if datapoint is set (has value)
-is_empty(field.amount)   # Opposite of `is_set`
+annotation.id                                       # Get annotation ID
+annotation.metadata                                 # Get annotation metadata
+annotation.document.original_file_name              # Get document original file name
+annotation.email.subject                            # Get email subject
 ```
 
-#### Serverless function
+  </TabItem>
+  <TabItem value="serverless_function" label="Serverless function">
+
+```py
+t.annotation.id                                     # Get annotation ID
+t.annotation.metadata                               # Get annotation metadata
+t.annotation.document.original_file_name            # Get document original file name
+t.annotation.email.subject                          # Get email subject
+```
+
+  </TabItem>
+</Tabs>
+
+### Check whether datapoint is set or not
+
+<Tabs groupId="rossum-formulas-flavor">
+  <TabItem value="formula_field" label="Formula field" default>
+
+```py
+is_set(field.amount)        # Returns `true` if datapoint is set (has value)
+is_empty(field.amount)      # Opposite of `is_set`
+```
+
+  </TabItem>
+  <TabItem value="serverless_function" label="Serverless function">
 
 ```py
 from txscript import TxScript, is_set, is_empty
 
 # …
 
-is_set(t.field.amount)
-is_empty(t.field.amount)
+is_set(t.field.amount)      # Returns `true` if datapoint is set (has value)
+is_empty(t.field.amount)    # Opposite of `is_set`
 ```
+
+  </TabItem>
+</Tabs>
 
 ### Defaulting values
 
 Use the default value if the field is empty.
 
-#### Formula field
+<Tabs groupId="rossum-formulas-flavor">
+  <TabItem value="formula_field" label="Formula field" default>
 
 ```py
 default_to(field.amount, 0)
 ```
 
-#### Serverless function
+  </TabItem>
+  <TabItem value="serverless_function" label="Serverless function">
 
 ```py
 from txscript import TxScript, default_to
@@ -171,11 +194,15 @@ from txscript import TxScript, default_to
 default_to(t.field.amount, 0)
 ```
 
+  </TabItem>
+</Tabs>
+
 ### Substitute
 
 Substitute is an alias for [`re.sub`](https://docs.python.org/3/library/re.html#re.sub) function (for convenience).
 
-#### Formula field
+<Tabs groupId="rossum-formulas-flavor">
+  <TabItem value="formula_field" label="Formula field" default>
 
 ```py
 substitute(r"[^0-9]", r"", field.document_id)  # Remove non-digit characters
@@ -187,7 +214,8 @@ Could also be written as (`re` is imported automatically):
 re.sub(r"[^0-9]", r"", field.document_id)
 ```
 
-#### Serverless function
+  </TabItem>
+  <TabItem value="serverless_function" label="Serverless function">
 
 ```py
 from txscript import TxScript, substitute
@@ -197,22 +225,10 @@ from txscript import TxScript, substitute
 substitute(r"[^0-9]", r"", t.field.document_id)
 ```
 
+  </TabItem>
+</Tabs>
+
 ### Show info/warning/error messages
-
-#### Formula field
-
-```py
-show_info("…")                    # Show global info message
-show_info("…", field.amount)      # Show info message on the specified field
-
-show_warning("…")                 # Show global warning message
-show_warning("…", field.amount)   # Show warning message on the specified field
-
-show_error("…")                   # Show global error message
-show_error("…", field.amount)     # Show error message on the specified field
-```
-
-#### Serverless function
 
 :::note
 
@@ -220,16 +236,36 @@ Messages do not affect the automation behavior and, therefore, automation blocke
 
 :::
 
+<Tabs groupId="rossum-formulas-flavor">
+  <TabItem value="formula_field" label="Formula field" default>
+
 ```py
-t.show_info("…")
-t.show_info("…", t.field.amount)
+show_info("…")                          # Show global info message
+show_info("…", field.amount)            # Show info message on the specified field
 
-t.show_warning("…")
-t.show_warning("…", t.field.amount)
+show_warning("…")                       # Show global warning message
+show_warning("…", field.amount)         # Show warning message on the specified field
 
-t.show_error("…")
-t.show_error("…", t.field.amount)
+show_error("…")                         # Show global error message
+show_error("…", field.amount)           # Show error message on the specified field
 ```
+
+  </TabItem>
+  <TabItem value="serverless_function" label="Serverless function">
+
+```py
+t.show_info("…")                        # Show global info message
+t.show_info("…", t.field.amount)        # Show info message on the specified field
+
+t.show_warning("…")                     # Show global warning message
+t.show_warning("…", t.field.amount)     # Show warning message on the specified field
+
+t.show_error("…")                       # Show global error message
+t.show_error("…", t.field.amount)       # Show error message on the specified field
+```
+
+  </TabItem>
+</Tabs>
 
 ### Set automation blockers
 
@@ -239,47 +275,62 @@ Automation blockers must be set independently of the info/warning messages. Erro
 
 :::
 
-#### Formula field
+<Tabs groupId="rossum-formulas-flavor">
+  <TabItem value="formula_field" label="Formula field" default>
 
 ```py
 automation_blocker("message", field.amount)
 ```
 
-#### Serverless function
+  </TabItem>
+  <TabItem value="serverless_function" label="Serverless function">
 
 ```py
 t.automation_blocker("message", t.field.amount)
 ```
 
+  </TabItem>
+</Tabs>
+
 ### Create multivalue field values
 
-#### Formula field
+<Tabs groupId="rossum-formulas-flavor">
+  <TabItem value="formula_field" label="Formula field" default>
 
 :::warning
 
-Multivalue formula fields are currently not supported.
+Multivalue formula fields are currently not supported (only serverless functions).
 
 :::
 
-#### Serverless function
+  </TabItem>
+  <TabItem value="serverless_function" label="Serverless function">
 
 ```py
 t.field.multivalue_field.all_values = ["AAA", "BBB"]
 ```
 
+  </TabItem>
+</Tabs>
+
 ### Create enum field options
 
-#### Formula field
+<Tabs groupId="rossum-formulas-flavor">
+  <TabItem value="formula_field" label="Formula field" default>
 
 :::warning
 
-Changing enum field options is currently not supported in formula fields.
+Changing enum field options is currently not supported in formula fields (only serverless functions).
 
 :::
 
-#### Serverless function
+  </TabItem>
+  <TabItem value="serverless_function" label="Serverless function">
 
 ```py
 t.field.enum_field.attr.options = [{"label":"AAA", "value":"aaa"}, {"label":"BBB", "value":"bbb"}]
 t.field.enum_field = "bbb"
 ```
+
+  </TabItem>
+</Tabs>
