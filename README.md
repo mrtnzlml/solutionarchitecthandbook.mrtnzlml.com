@@ -1,4 +1,4 @@
-# Unofficial Rossum.ai University
+# The Solution Architect's Handbook
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
@@ -38,3 +38,11 @@ This command generates static content into the `build` directory and can be serv
 1. Move the page as is into the `deprecated` folder
 1. Adjust any broken links and imports
 1. Add `slug` into the [front matter](https://docusaurus.io/docs/create-doc#doc-front-matter) (to remove the `/deprecated/` path from the URL for backwards compatibility)
+
+## Collecting all documentation into one file
+
+Very handy for Gemini gems:
+
+```bash
+find ./docs -name "*.md" | xargs cat > ./all_handbook_content.txt
+```
