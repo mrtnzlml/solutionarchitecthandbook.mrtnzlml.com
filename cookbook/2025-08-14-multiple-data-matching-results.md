@@ -1,7 +1,7 @@
 ---
 title: Multiple data matching results
 slug: multiple-data-matching-results
-authors: [mrtnzlml]
+authors: [mrtnzlml, VaclavRut]
 tags: [master-data-hub, rossum-formulas]
 ---
 
