@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkuniversity=self.webpackChunkuniversity||[]).push([[2763],{9283:t=>{t.exports=JSON.parse('{"authors":[{"name":"Martin Zl\xe1mal","title":"Solution Architect","url":"https://github.com/mrtnzlml","imageURL":"https://github.com/mrtnzlml.png","key":"mrtnzlml","page":null,"count":1}]}')}}]);
