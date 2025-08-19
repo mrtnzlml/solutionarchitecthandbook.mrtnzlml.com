@@ -3,6 +3,8 @@ title: 'Master data hub'
 sidebar_position: 1
 ---
 
+import QuizComponent from '@site/src/components/QuizComponent';
+
 :::info[API documentation]
 
 👉 https://elis.rossum.ai/svc/master-data-hub/api/docs
@@ -77,3 +79,14 @@ For Rossum Employees: Token owner must have an "Admin" role assigned in Rossum. 
 ### Step 5: Save the configuration
 
 Once you have made your selections, don't forget to save your changes to ensure they take effect properly.
+
+<QuizComponent
+question="What type of field must be configured in the schema to display the results of a Master Data Hub match?"
+answers={[
+{ text: 'string' },
+{ text: 'number' },
+{ text: 'enum', isCorrect: true },
+{ text: 'date' }
+]}>
+The field must be an `enum` type. This is because the Master Data Hub needs a field that can hold a dynamic set of options, which are the results of the matching query. The `enum` field type is designed to handle a list of choices, making it the perfect fit for displaying the matched vendor, purchase order, or other data from your master database. If no match is found, it can display a corresponding message.
+</QuizComponent>
