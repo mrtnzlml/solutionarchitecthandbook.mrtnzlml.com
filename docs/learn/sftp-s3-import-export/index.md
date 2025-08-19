@@ -67,13 +67,83 @@ Alternatively, it is also possible to install them manually (advanced):
 
 <RossumInternalOnly url="https://rossumai.atlassian.net/l/cp/S1coKmuC" />
 
-## Basic usage
-
-<WIP />
-
 ## Available configuration options
 
-Available configuration options are described in the API documentation:
+Common import/export configuration:
+
+```json
+{
+  "credentials": {
+    // Credentials section depends on whether you are using S3 or SFTP (see below)
+    // …
+  },
+  "import_rules": [
+    {
+      "dataset_name": "PURCHASE_ORDERS_EXAMPLE_v1",
+      "import_methods": {
+        "replace_method": {
+          "path": "/datasets",
+          "dynamic": false,
+          "file_format": "xlsx",
+          "file_match_regex": "PURCHASE_ORDERS\\.xlsx"
+        }
+      },
+      "result_actions": {
+        "failure": [
+          {
+            "path": "/datasets/failed_imports",
+            "type": "move"
+          }
+        ],
+        "success": [
+          {
+            "path": "/datasets/archive",
+            "type": "move"
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+Credentials for **SFTP-related** import/export are specified in the following format:
+
+```json
+{
+  "credentials": {
+    "host": "sftp.example.com",
+    "port": "22",
+    "type": "sftp",
+    "username": "example",
+
+    // (Optional) Version of your SFTP server. Needed only exceptionally when automatic detection of
+    // the version fails.
+    "sftp_version": 5
+  },
+  "import_rules": [
+    // … (see above)
+  ]
+}
+```
+
+Credentials for **S3-related** import/export:
+
+```json
+{
+  "credentials": {
+    "host": "sftp.example.com",
+    "port": "22",
+    "type": "s3",
+    "username": "example"
+  },
+  "import_rules": [
+    // … (see above)
+  ]
+}
+```
+
+All available configuration options are also described in the API documentation:
 
 - Import: [Scheduled Imports - File storage](https://elis.rossum.ai/svc/scheduled-imports/api/docs#tag/File-Storage/operation/import_dataset_from_file_storage_api_file_storage_v1_dataset_import_post)
 - Export: [File Storage Export](https://elis.rossum.ai/svc/file-storage-export/api/docs)
