@@ -56,7 +56,8 @@ Email body converter is a webhook maintained by Rossum. To use it, follow these 
       // converted to PDF). Default is `false`.
       "skip_if_supported_files_present": false,
 
-      // Optional. List of attachment types to convert to PDF. Supported values: "html", "txt"
+      // Optional. List of attachment types to convert to PDF. Supported values: "html", "txt".
+      // When omitted, thef files will be deleted as with any other unsupported attachment.
       "convert_attachments": ["html", "txt"],
 
       // Optional. Specifies the style for TXT files, which are first converted to HTML and then
