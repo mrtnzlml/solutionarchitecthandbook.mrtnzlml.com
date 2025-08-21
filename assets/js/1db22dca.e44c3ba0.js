@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkuniversity=self.webpackChunkuniversity||[]).push([[5970],{2397:o=>{o.exports=JSON.parse('{"metadata":{"permalink":"/cookbook","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Cookbook","blogTitle":"Cookbook"}}')}}]);

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://mrtnzlml.github.io/rossum-sa-handbook/cookbook</id>
+    <id>https://solutionarchitecthandbook.mrtnzlml.com/cookbook</id>
     <title>The Solution Architect's Handbook Blog</title>
     <updated>2025-08-14T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://mrtnzlml.github.io/rossum-sa-handbook/cookbook"/>
+    <link rel="alternate" href="https://solutionarchitecthandbook.mrtnzlml.com/cookbook"/>
     <subtitle>The Solution Architect's Handbook Blog</subtitle>
-    <icon>https://mrtnzlml.github.io/rossum-sa-handbook/img/128-blue-crunch.png</icon>
+    <icon>https://solutionarchitecthandbook.mrtnzlml.com/img/128-blue-crunch.png</icon>
     <entry>
         <title type="html"><![CDATA[Multiple data matching results]]></title>
-        <id>https://mrtnzlml.github.io/rossum-sa-handbook/cookbook/multiple-data-matching-results</id>
-        <link href="https://mrtnzlml.github.io/rossum-sa-handbook/cookbook/multiple-data-matching-results"/>
+        <id>https://solutionarchitecthandbook.mrtnzlml.com/cookbook/multiple-data-matching-results</id>
+        <link href="https://solutionarchitecthandbook.mrtnzlml.com/cookbook/multiple-data-matching-results"/>
         <updated>2025-08-14T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Data matching (Master Data Hub; MDH) results are by default returned into an "enum" field in Rossum (also known as "Options" field). Enum field allows to select only one of the values returned (it behaves as a regular HTML select element with options). What if you need to select multiple values, however?]]></summary>
         <content type="html"><![CDATA[<p>Data matching (Master Data Hub; MDH) results are by default returned into an "enum" field in Rossum (also known as "Options" field). Enum field allows to select only one of the values returned (it behaves as a regular <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/select" target="_blank" rel="noopener noreferrer">HTML select element</a> with options). What if you need to select multiple values, however?</p>

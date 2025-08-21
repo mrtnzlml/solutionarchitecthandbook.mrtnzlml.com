@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkuniversity=self.webpackChunkuniversity||[]).push([[1903],{1912:o=>{o.exports=JSON.parse('{"blogBasePath":"/rossum-sa-handbook/cookbook","blogTitle":"Cookbook","authorsListPath":"/rossum-sa-handbook/cookbook/authors"}')}}]);

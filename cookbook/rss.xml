@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>The Solution Architect's Handbook Blog</title>
-        <link>https://mrtnzlml.github.io/rossum-sa-handbook/cookbook</link>
+        <link>https://solutionarchitecthandbook.mrtnzlml.com/cookbook</link>
         <description>The Solution Architect's Handbook Blog</description>
         <lastBuildDate>Thu, 14 Aug 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,8 +10,8 @@
         <language>en</language>
         <item>
             <title><![CDATA[Multiple data matching results]]></title>
-            <link>https://mrtnzlml.github.io/rossum-sa-handbook/cookbook/multiple-data-matching-results</link>
-            <guid>https://mrtnzlml.github.io/rossum-sa-handbook/cookbook/multiple-data-matching-results</guid>
+            <link>https://solutionarchitecthandbook.mrtnzlml.com/cookbook/multiple-data-matching-results</link>
+            <guid>https://solutionarchitecthandbook.mrtnzlml.com/cookbook/multiple-data-matching-results</guid>
             <pubDate>Thu, 14 Aug 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[Data matching (Master Data Hub; MDH) results are by default returned into an "enum" field in Rossum (also known as "Options" field). Enum field allows to select only one of the values returned (it behaves as a regular HTML select element with options). What if you need to select multiple values, however?]]></description>
             <content:encoded><![CDATA[<p>Data matching (Master Data Hub; MDH) results are by default returned into an "enum" field in Rossum (also known as "Options" field). Enum field allows to select only one of the values returned (it behaves as a regular <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/select" target="_blank" rel="noopener noreferrer">HTML select element</a> with options). What if you need to select multiple values, however?</p>
