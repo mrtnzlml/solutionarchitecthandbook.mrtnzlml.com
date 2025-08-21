@@ -13,10 +13,10 @@ const config = {
   favicon: 'img/128-blue-crunch.png',
 
   // Set the production url of your site here
-  url: 'https://mrtnzlml.github.io/',
+  url: 'https://solutionarchitecthandbook.mrtnzlml.com/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/rossum-sa-handbook/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -87,22 +87,11 @@ const config = {
             position: 'left',
             label: 'Learn',
           },
-
-          // See: http://localhost:3000/docs/docusaurus/intro
-          // {
-          //   type: 'docSidebar',
-          //   sidebarId: 'docusaurusSidebar',
-          //   position: 'left',
-          //   label: 'Docusaurus',
-          // },
-
-          // http://localhost:3000/blog
           {
             to: '/cookbook',
             label: 'Cookbook',
             position: 'left',
           },
-
           {
             href: 'https://elis.rossum.ai/api/docs/',
             label: 'API',
