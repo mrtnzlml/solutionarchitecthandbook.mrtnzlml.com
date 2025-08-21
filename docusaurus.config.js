@@ -158,9 +158,9 @@ const config = {
       },
       algolia: {
         // See: https://docusaurus.io/docs/search#using-algolia-docsearch
-        appId: 'KUCN9RVGHJ',
-        apiKey: '6e2abd4bca7442bb8e7bce44cee801ec', // Public API key: it is safe to commit it
-        indexName: 'rossum-university',
+        appId: 'HWY2BR8QF7',
+        apiKey: '5d72b7d176040e3441b055eed0c2fb9c', // Public API key: it is safe to commit it
+        indexName: 'solutionarchitecthandbook.mrtnzlml.com',
         contextualSearch: true,
         searchParameters: {},
         searchPagePath: 'search',
