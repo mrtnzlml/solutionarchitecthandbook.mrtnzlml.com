@@ -28,11 +28,11 @@ Provide a single, three-letter, uppercase **ISO 3166-1 alpha-3** country code fo
 
 - **`sender_address`**: The input is a string representing a physical address.
 - **Logic**:
-    - Identify the country from the `sender_address`.
-    - If the country is explicitly mentioned (e.g., "USA", "United Kingdom"), use that to determine the alpha-3 code.
-    - If the country is missing, infer the country from contextual clues such as the city, postal code, or regional language conventions.
-    - **Exclude/Ignore**: Do not consider the name of the street or the building number for country identification.
-    - If, after all attempts at inference, the country remains ambiguous or unidentifiable, return the fallback code.
+  - Identify the country from the `sender_address`.
+  - If the country is explicitly mentioned (e.g., "USA", "United Kingdom"), use that to determine the alpha-3 code.
+  - If the country is missing, infer the country from contextual clues such as the city, postal code, or regional language conventions.
+  - **Exclude/Ignore**: Do not consider the name of the street or the building number for country identification.
+  - If, after all attempts at inference, the country remains ambiguous or unidentifiable, return the fallback code.
 
 ### **3. Fallback and Output Format**
 
@@ -42,11 +42,11 @@ Provide a single, three-letter, uppercase **ISO 3166-1 alpha-3** country code fo
 
 ### **4. Examples**
 
-| Input Address | Output |
-| :--- | :--- |
-| 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA | USA |
-| 10 Downing Street, London SW1A 2AA | GBR |
-| Křižíkova 148/34, 186 00 Karlín, Czech Republic | CZE |
+| Input Address                                           | Output |
+| :------------------------------------------------------ | :----- |
+| 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA | USA    |
+| 10 Downing Street, London SW1A 2AA                      | GBR    |
+| Křižíkova 148/34, 186 00 Karlín, Czech Republic         | CZE    |
 ```
 
 Protip: do not rely on the model's output to be correct, always verify it if possible. For example, the above prompt should clearly return a three-letter code, so you can write a validation rule that makes sure that the output conforms to the specification (and the ISO code actually exists). This way you make sure that the user-confirmed data is always correct. In return the future predictions will be more accurate.
