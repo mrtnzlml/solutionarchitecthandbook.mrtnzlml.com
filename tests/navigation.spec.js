@@ -3,8 +3,10 @@ const { test, expect } = require('@playwright/test');
 test('homepage', async ({ page }) => {
   await page.goto('/');
 
-  await expect(page.getByRole('heading')).toContainText('The Solution Architect\'s Handbook');
-  await expect(page.getByRole('paragraph')).toContainText('Build something cool with Rossum.ai and @mrtnzlml');
+  await expect(page.getByRole('heading')).toContainText("The Solution Architect's Handbook");
+  await expect(page.getByRole('paragraph')).toContainText(
+    'Learn how to use Rossum.ai from a Solution Architect',
+  );
 });
 
 test('main navigation (Learn button)', async ({ page }) => {
