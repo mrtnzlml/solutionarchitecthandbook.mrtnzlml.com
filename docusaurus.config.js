@@ -47,7 +47,7 @@ const config = {
         docs: {
           // Will be passed to @docusaurus/plugin-content-docs (false to disable)
           sidebarPath: './sidebars.js',
-          editUrl: 'https://github.com/mrtnzlml/rossum-sa-handbook/tree/master/',
+          // editUrl: 'https://github.com/mrtnzlml/rossum-sa-handbook/tree/master/',
         },
         blog: {
           // Will be passed to @docusaurus/plugin-content-blog (false to disable)
