@@ -4,7 +4,7 @@
   <ShortName>The Solution Architect&#39;s Handbook</ShortName>
   <Description>Search The Solution Architect&#39;s Handbook</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://solutionarchitecthandbook.mrtnzlml.com/img/128-blue-crunch.png</Image>
+  <Image width="16" height="16" type="image/x-icon">https://solutionarchitecthandbook.mrtnzlml.com/img/triangle-crunch.png</Image>
   <Url type="text/html" method="get" template="https://solutionarchitecthandbook.mrtnzlml.com/search?q={searchTerms}"/>
   <Url type="application/opensearchdescription+xml" rel="self" template="https://solutionarchitecthandbook.mrtnzlml.com/opensearch.xml" />
   <moz:SearchForm>https://solutionarchitecthandbook.mrtnzlml.com/</moz:SearchForm>
