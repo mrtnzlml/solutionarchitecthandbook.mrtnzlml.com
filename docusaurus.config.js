@@ -8,8 +8,8 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'The Solution Architect\'s Handbook',
-  tagline: 'Build something cool with Rossum.ai and @mrtnzlml',
+  title: "The Solution Architect's Handbook",
+  tagline: 'Learn how to use Rossum.ai from a Solution Architect',
   favicon: 'img/triangle-crunch.png',
 
   // Set the production url of your site here
@@ -75,7 +75,7 @@ const config = {
     ({
       image: 'img/og_image.png',
       navbar: {
-        title: 'The Solution Architect\'s Handbook',
+        title: "The Solution Architect's Handbook",
         logo: {
           alt: 'Rossum.ai Logo',
           src: 'img/triangle-crunch.png',
@@ -146,11 +146,11 @@ const config = {
         ],
         copyright: `By @mrtnzlml with ❤️`,
       },
-      announcementBar: {
-        content: 'Looking for an official documentation of the Rossum.ai platform? Try this: <a href="https://knowledge-base.rossum.ai/">https://knowledge-base.rossum.ai/</a>',
-        backgroundColor: '#e6a700',
-        isCloseable: false,
-      },
+      // announcementBar: {
+      //   content: 'Looking for an official documentation of the Rossum.ai platform? Try this: <a href="https://knowledge-base.rossum.ai/">https://knowledge-base.rossum.ai/</a>',
+      //   backgroundColor: '#e6a700',
+      //   isCloseable: false,
+      // },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
