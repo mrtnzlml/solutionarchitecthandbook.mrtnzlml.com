@@ -10,7 +10,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 const config = {
   title: 'The Solution Architect\'s Handbook',
   tagline: 'Build something cool with Rossum.ai and @mrtnzlml',
-  favicon: 'img/128-blue-crunch.png',
+  favicon: 'img/triangle-crunch.png',
 
   // Set the production url of your site here
   url: 'https://solutionarchitecthandbook.mrtnzlml.com/',
@@ -78,7 +78,7 @@ const config = {
         title: 'The Solution Architect\'s Handbook',
         logo: {
           alt: 'Rossum.ai Logo',
-          src: 'img/128-blue-crunch.png',
+          src: 'img/triangle-crunch.png',
         },
         items: [
           {
