@@ -66,6 +66,14 @@ const config = {
           // Will be passed to @docusaurus/plugin-google-gtag (only enabled when explicitly specified)
           trackingID: 'G-2DBTH3BGYK',
         },
+        sitemap: {
+          // Will be passed to @docusaurus/plugin-sitemap (false to disable)
+          // See: https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-sitemap
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/cookbook/tags/**'],
+          filename: 'sitemap.xml',
+        },
       }),
     ],
   ],
