@@ -6,6 +6,7 @@ tags: [reasoning-fields]
 ---
 
 import QuizComponent from '@site/src/components/QuizComponent';
+import SolutionArchitectCTA from '@site/src/components/SolutionArchitectCTA';
 
 Rossum.ai recently introduced a new field type: **[Reasoning Fields](https://knowledge-base.rossum.ai/docs/reasoning-fields)** (inline LLM fields). Here is all you need to know about them from a Solution Architect:
 
@@ -64,3 +65,5 @@ Reasoning Fields are powered by an in-house LLM model that is self-hosted within
 </QuizComponent>
 
 Note that Reasoning Fields are still in beta and are subject to change. Get in touch with your Rossum representative if you have any questions or concerns.
+
+<SolutionArchitectCTA />
