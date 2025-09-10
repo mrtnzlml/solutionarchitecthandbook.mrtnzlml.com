@@ -63,7 +63,18 @@ Email body converter is a webhook maintained by Rossum. To use it, follow these 
       // Optional. Specifies the style for TXT files, which are first converted to HTML and then
       // to PDF. This configuration is added as an HTML style tag to affect the appearance of
       // the TXT in the converted PDF.
-      "txt_style": "@page { size: letter landscape; margin: 2cm; } pre { white-space: pre-wrap; }"
+      "txt_style": "@page { size: letter landscape; margin: 2cm; } pre { white-space: pre-wrap; }",
+
+      // Optional. Specifies the style for the email header in the rendered PDF.
+      "header_style": "table.email-header { width: 100%; border-collapse: collapse; font-family: Arial,Helvetica,sans-serif; font-size: 14px; margin-bottom: 20px; }\ntable.email-header td { vertical-align: top; padding: 2px 0; }\ntable.email-header td:first-child { padding: 2px 2em 2px 0; white-space: nowrap; width: 1%; }\ntable.email-header td:nth-child(2) { word-break: break-all; }",
+
+      // Optional. If set to `true`, the webhook will only create a document (via /documents API
+      // endpoint) and will not create the annotation. Default is `false`.
+      "create_document_only": false,
+
+      // Optional. If set to `true`, the webhook will include the email header in the rendered PDF.
+      // Default is `false`.
+      "include_header_in_pdf": false
     }
   ]
 }
