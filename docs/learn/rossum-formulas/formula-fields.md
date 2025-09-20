@@ -123,6 +123,24 @@ Returns line item number (indexed from 0):
 field._index
 ```
 
+### Get email body and subject
+
+Search PO number (e.g. `PO111`) in the email subject:
+
+```py
+email_subject = getattr(annotation.email, "subject", "")
+if match := re.search(r"(PO111)", email_subject, re.IGNORECASE):
+    match.group(1)
+```
+
+Search PO number (e.g. `PO222`) in the email body:
+
+```py
+email_body_text_plain = getattr(annotation.email, "body_text_plain", "")
+if match := re.search(r"(PO222)", email_body_text_plain, re.IGNORECASE):
+    match.group(1)
+```
+
 ### Normalize field value
 
 Remove non-alphanumeric characters (except "-" and "\_"):
